@@ -12,17 +12,22 @@ public class Program {
 
         String chute;
 
-        System.out.println("------------------------------------------------");
-        System.out.println("-------- ###### PALAVRA DO DIA! ###### ---------");
-        System.out.println("------------------------------------------------");
-        System.out.println("............... dica: 4 letras .................");
-        System.out.println("------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------");
+        System.out.println("---------------------------- ####### PALAVRA DO DIA! ####### ----------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------");
+        System.out.println(".................................... dica: 4 letras .....................................");
+        System.out.println("(V = Letra no local certo. Q = Letra no local errado. X = Palavra não possui essa letra.)");
+        System.out.println("-----------------------------------------------------------------------------------------");
 
         do {
 
-            System.out.println("\n________________________________________________");
+            System.out.println("\n_________________________________________________________________________________________");
             System.out.print("Digite a palavra: ");
             chute = sc.nextLine().toUpperCase();
+            while(chute.length() != palavra.getPalavraDodia().length()){
+                System.out.println("A palavra deve ter o mesmo numero de letras da dica.");
+                chute = sc.nextLine().toUpperCase();
+            }
 
             if (!chute.equals(palavra.getPalavraDodia())) {
                 System.out.println("Errou, tente novamente.");
@@ -36,5 +41,4 @@ public class Program {
 
         sc.close();
     }
-    
 }
